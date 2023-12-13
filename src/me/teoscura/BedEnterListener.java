@@ -16,13 +16,13 @@ public class BedEnterListener extends PlayerListener {
     public void onPlayerBedEnter(PlayerBedEnterEvent event){
         Player player = event.getPlayer();
         plugin.beddersList.put(player, true);
-        if(plugin.beddersList.size()< (double) (plugin.getServer().getOnlinePlayers().length - plugin.afkPlayers.size()) *(plugin.getPercentage()/100D)){
+        if(plugin.beddersList.size()<= (double) (plugin.getServer().getOnlinePlayers().length - plugin.afkPlayers.size()) *(plugin.getPercentage()/100D)){
             for(Player p : plugin.getServer().getOnlinePlayers()){
                 p.sendMessage(ChatColor.DARK_AQUA
                         +"[Beds] "
                         + plugin.beddersList.size()
                         +"/"
-                        +Math.floor((plugin.getServer().getOnlinePlayers().length-plugin.afkPlayers.size())*(plugin.getPercentage()/100))
+                        +(plugin.getServer().getOnlinePlayers().length-plugin.afkPlayers.size())
                         +" players sleeping! "
                         + calculateString()
                 );
@@ -32,7 +32,7 @@ public class BedEnterListener extends PlayerListener {
     }
 
     public String calculateString(){
-        int n = (int) (plugin.beddersList.size()-Math.floor((plugin.getServer().getOnlinePlayers().length-plugin.afkPlayers.size())*(plugin.getPercentage()/100)));
+        int n = (int) (plugin.beddersList.size()-Math.ceil((plugin.getServer().getOnlinePlayers().length-plugin.afkPlayers.size())*(plugin.getPercentage()/100)));
         return abs(n) + " more for day.";
     }
 }

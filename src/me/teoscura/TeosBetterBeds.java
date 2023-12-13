@@ -74,7 +74,7 @@ public class TeosBetterBeds extends JavaPlugin {
             public void run() {
                 for(Player p : getServer().getOnlinePlayers()) {
                     if(whoMoved.containsKey(p)){
-                        if (TimeUnit.MINUTES.convert(Math.abs(new Date().getTime() - whoMoved.get(p).getTime()), TimeUnit.MILLISECONDS) > 5) {
+                        if (TimeUnit.MINUTES.convert(Math.abs(new Date().getTime() - whoMoved.get(p).getTime()), TimeUnit.MILLISECONDS) > 4) {
                             afkManager.addToAfkList(p);
                         }
                     }
