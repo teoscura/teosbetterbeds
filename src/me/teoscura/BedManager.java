@@ -35,7 +35,7 @@ public class BedManager implements CommandExecutor {
         return true;
     }
     public void onUpdateToList(){
-        if(plugin.beddersList.size()>(plugin.getServer().getOnlinePlayers().length-plugin.afkPlayers.size())*(plugin.getPercentage()/100D)){
+        if(plugin.beddersList.size()>= (double) (plugin.getServer().getOnlinePlayers().length - plugin.afkPlayers.size()) *(plugin.getPercentage()/100D)){
             //do the funny bed stuff
             if(freeToWork){
                 if(plugin.getServer().getWorld("world").getTime()>12250L){
@@ -56,7 +56,7 @@ public class BedManager implements CommandExecutor {
         else{
             System.out.println(ChatColor.DARK_AQUA+"[Beds] Not enough people sleeping! " +
                     plugin.beddersList.size()+"/"+
-                    (plugin.getServer().getOnlinePlayers().length-plugin.afkPlayers.size())
+                    Math.floor((plugin.getServer().getOnlinePlayers().length-plugin.afkPlayers.size())*(plugin.getPercentage()/100))
             );
         }
     }
