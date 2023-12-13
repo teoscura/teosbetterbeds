@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TeosBetterBeds:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TeosBetterBeds_jar</output-path>
+    <root id="archive" name="TeosBetterBeds.jar">
+      <element id="module-output" name="TeosBetterBeds" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/project-poseidon-1.1.8.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

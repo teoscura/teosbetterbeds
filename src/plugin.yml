@@ -1,0 +1,13 @@
+name: TeosBetterBeds
+version: 1.0
+main: me.teoscura.TeosBetterBeds
+commands:
+  afk:
+    description: Enable your state as AFK!
+    usage: /afk
+  setbedspercentage:
+    description: Change percentage needed for day to skip.
+    usage: /setbedspercentage newPercentage
+  afklist:
+    description: List all afk players.
+    usage: /afklist
