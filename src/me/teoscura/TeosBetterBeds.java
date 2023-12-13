@@ -94,4 +94,7 @@ public class TeosBetterBeds extends JavaPlugin {
         System.out.println("Teo's better beds is disabled!");
     }
 
+    public HashMap<Player, Boolean> getAfkPlayers(){
+        return afkPlayers;
+    }
 }
